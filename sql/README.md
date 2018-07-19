@@ -18,66 +18,6 @@
 3. Qual é a porcentagem de pacotes recebidos do IFPB?
 4. Qual é a porcentagem de pacotes perditos do IFPB no dia 16/02/2018 entre 09:00 até 18:00?
 
-## Comandos
----
-
-```
-$ mysql_secure_installation
-```
-
-```
-$ mysql -u [username] -p
-$ mysql -u root -p
-Enter password: 
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 56
-Server version: 5.5.59-0ubuntu0.14.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql>
-```
-
-```
-$ mysql -h[host] -P[post] -u[username] -p[password]
-$ mysql -h127.0.0.1 -P3306 -uroot -pabc123
-mysql: [Warning] Using a password on the command line interface can be insecure.
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 57
-Server version: 5.5.59-0ubuntu0.14.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql>
-```
-
-```
-$ mysqldump -u [username] -p [database] > [database]_backup.sql
-$ mysqldump -u root -p monitor_db > monitor_db_backup.sql
-```
-
-```
-$ mysqldump -u root -p --no-create-info monitor_db > monitor_db_backup.sql # data only
-$ mysqldump -u root -p --no-data monitor_db > monitor_db_backup.sql # structure only
-$ mysqldump -u root -p --all-databases > database_backup.sql # database
-```
-
-```
-$ mysql -u [username] -p [database] < database_backup_backup.sql
-```
-
 ## SQL
 ---
 
@@ -86,6 +26,8 @@ $ mysql -u [username] -p [database] < database_backup_backup.sql
 > - Os nomes são *case sensitive*
 > - Não esqueça do `;` nos comandos
 > - Em caso de erro tente interpretar a mensagem de erro
+
+### Databases
 
 ```sql
 > SHOW DATABASES;
@@ -138,6 +80,8 @@ Database changed
 +------------+
 1 row in set (0.00 sec)
 ```
+
+### Tables
 
 ```sql
 > SHOW TABLES;
@@ -234,6 +178,8 @@ Records: 0  Duplicates: 0  Warnings: 0
 3 rows in set (0.00 sec)
 ```
 
+### CRUD - Create
+
 ```sql
 > INSERT INTO host
     VALUES (1, 'www.ifpb.edu.br', '200.10.10.10');
@@ -249,6 +195,8 @@ Query OK, 1 row affected (0.01 sec)
 Query OK, 2 rows affected (0.01 sec)
 Records: 2  Duplicates: 0  Warnings: 0
 ```
+
+### CRUD - Read
 
 ```sql
 > SELECT * FROM host;
@@ -354,6 +302,8 @@ Records: 2  Duplicates: 0  Warnings: 0
 |  2 | www.ifrn.edu.br | 200.10.10.11 |
 +----+-----------------+--------------+
 
+### CRUD - Update
+
 > UPDATE host
     SET address = '10.0.0.10'
     WHERE id = 2;
@@ -384,6 +334,8 @@ Rows matched: 1  Changed: 1  Warnings: 0
 +----+--------------------+------------+
 ```
 
+### CRUD - Delete
+
 ```sql
 > SELECT * FROM host;
 +----+-----------------+--------------+
@@ -402,6 +354,10 @@ Empty set (0.00 sec)
 ```
 
 > **DICA:** Muito cuidado com o `DELETE` e `UPDATE` sem o `WHERE`!
+
+### Database Relation (1-N)
+
+![erd diagram](monitor_db.png)
 
 ```sql
 > CREATE TABLE history (
@@ -428,8 +384,6 @@ Query OK, 0 rows affected (0.02 sec)
 +-------------+---------+------+-----+---------+----------------+
 5 rows in set (0.00 sec)
 ```
-
-![erd diagram](monitor_db.png)
 
 ```sql
 > INSERT INTO history
@@ -514,8 +468,9 @@ Records: 5  Duplicates: 0  Warnings: 0
 Bye
 ```
 
-## Referências
+## References
 ---
+
 - [MySQL - SQL Statement Syntax](https://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html)
 - Mysql: [Tipos](https://www.tutorialspoint.com/mysql/mysql-data-types.htm), [Funções](https://www.w3schools.com/sql/sql_ref_mysql.asp), [Operadores](https://www.w3schools.com/sql/sql_operators.asp)
 - [Oracle - Database SQL Language Reference](https://docs.oracle.com/database/121/SQLRF/toc.htm)
