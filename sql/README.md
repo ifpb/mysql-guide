@@ -387,7 +387,9 @@ Empty set (0.00 sec)
     CONSTRAINT fk_host_id FOREIGN KEY (host_id) REFERENCES host (id)
 );
 Query OK, 0 rows affected (0.02 sec)
+```
 
+```sql
 > DESCRIBE history;
 +-------------+---------+------+-----+---------+----------------+
 | Field       | Type    | Null | Key | Default | Extra          |
@@ -424,7 +426,9 @@ Records: 5  Duplicates: 0  Warnings: 0
 |  5 |           4 |        3 | 2018-02-16 13:41:49 |       2 |
 +----+-------------+----------+---------------------+---------+
 5 rows in set (0.00 sec)
+```
 
+```sql
 > SELECT 
     * 
   FROM 
@@ -444,7 +448,9 @@ Records: 5  Duplicates: 0  Warnings: 0
 |  3 | www.ifpb.edu.br    | 200.10.10.12 |  5 |           4 |        3 | 2018-02-16 13:41:49 |       2 |
 +----+--------------------+--------------+----+-------------+----------+---------------------+---------+
 10 rows in set (0.00 sec)
+```
 
+```sql
 > SELECT 
     * 
   FROM 
@@ -461,7 +467,9 @@ Records: 5  Duplicates: 0  Warnings: 0
 |  3 | www.ifpb.edu.br    | 200.10.10.12 |  4 |           5 |        5 | 2018-02-16 13:41:49 |       3 |
 +----+--------------------+--------------+----+-------------+----------+---------------------+---------+
 5 rows in set (0.00 sec)
+```
 
+```sql
 > SELECT 
     sum(history.transmitted) AS transmitted, 
     sum(history.received) AS received, 
