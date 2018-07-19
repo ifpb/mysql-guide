@@ -30,7 +30,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ```
 
-**mysql -h[host] -P[post] -u[username] -p[password]**
+**mysql -h[host] -P[port] -u[username] -p[password]**
 ```
 $ mysql -h127.0.0.1 -P3306 -uroot -pabc123
 mysql: [Warning] Using a password on the command line interface can be insecure.
@@ -65,3 +65,6 @@ $ mysqldump -u root -p --all-databases > database_backup.sql # database
 ```
 $ mysql -u [username] -p [database] < database_backup_backup.sql
 ```
+
+## [MySQL Workbench](https://www.mysql.com/products/workbench/)
+---

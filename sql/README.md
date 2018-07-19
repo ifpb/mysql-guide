@@ -11,7 +11,7 @@
 | ...                | ...          |         ... |      ... | ...                 |
 | www.ifpb.edu.br    | 200.10.10.12 |           5 |        5 | 2018-02-18 13:41:49 |
 
-### Questões
+**Questões**
 
 1. Quantos pacotes foram recebidos?
 2. Qual é a média de pacotes perdidos?
@@ -27,7 +27,7 @@
 > - Não esqueça do `;` nos comandos
 > - Em caso de erro tente interpretar a mensagem de erro
 
-### Databases
+### Database
 
 ```sql
 > SHOW DATABASES;
@@ -39,7 +39,9 @@
 | performance_schema |
 +--------------------+
 3 rows in set (0.00 sec)
+```
 
+```sql
 > CREATE DATABASE monitor_db;
 Query OK, 1 row affected (0.00 sec)
 
@@ -53,7 +55,9 @@ Query OK, 1 row affected (0.00 sec)
 | performance_schema |
 +--------------------+
 4 rows in set (0.00 sec)
+```
 
+```sql
 > DROP DATABASE monitor_db;
 Query OK, 0 rows affected (0.00 sec)
 
@@ -81,12 +85,14 @@ Database changed
 1 row in set (0.00 sec)
 ```
 
-### Tables
+### Table
 
 ```sql
 > SHOW TABLES;
 Empty set (0.00 sec)
+```
 
+```sql
 > CREATE TABLE host (
   id int NOT NULL AUTO_INCREMENT,
   name varchar(100) NOT NULL,
@@ -102,7 +108,9 @@ Query OK, 0 rows affected (0.00 sec)
 | host                 |
 +----------------------+
 1 row in set (0.00 sec)
+```
 
+```sql
 > DESCRIBE host;
 +---------+--------------+------+-----+---------+----------------+
 | Field   | Type         | Null | Key | Default | Extra          |
@@ -112,12 +120,12 @@ Query OK, 0 rows affected (0.00 sec)
 | address | varchar(100) | NO   |     | NULL    |                |
 +---------+--------------+------+-----+---------+----------------+
 3 rows in set (0.00 sec)
-
-> DROP TABLE host;
-Query OK, 0 rows affected (0.00 sec)
 ```
 
 ```sql
+> DROP TABLE host;
+Query OK, 0 rows affected (0.00 sec)
+
 > SHOW TABLES;
 +----------------------+
 | Tables_in_monitor_db |
@@ -125,7 +133,9 @@ Query OK, 0 rows affected (0.00 sec)
 | host                 |
 +----------------------+
 1 row in set (0.01 sec)
+```
 
+```sql
 > RENAME TABLE host TO hosts;
 Query OK, 0 rows affected (0.00 sec)
 
@@ -162,7 +172,9 @@ Records: 0  Duplicates: 0  Warnings: 0
 | mask    | varchar(100) | YES  |     | NULL    |                |
 +---------+--------------+------+-----+---------+----------------+
 4 rows in set (0.00 sec)
+```
 
+```sql
 > ALTER TABLE host DROP COLUMN mask;
 Query OK, 0 rows affected (0.01 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -301,9 +313,11 @@ Records: 2  Duplicates: 0  Warnings: 0
 +----+-----------------+--------------+
 |  2 | www.ifrn.edu.br | 200.10.10.11 |
 +----+-----------------+--------------+
+```
 
 ### CRUD - Update
 
+```sql
 > UPDATE host
     SET address = '10.0.0.10'
     WHERE id = 2;
@@ -318,7 +332,9 @@ Rows matched: 1  Changed: 1  Warnings: 0
 |  2 | www.ifrn.edu.br | 10.0.0.10 |
 +----+-----------------+-----------+
 1 row in set (0.00 sec)
+```
 
+```sql
 > UPDATE host
     SET name = 'portal.ifrn.edu.br', address = '10.0.0.100' 
     WHERE id = 2;
@@ -486,6 +502,5 @@ TODO
   - mysql workbench
 - ALTER TABLE tablename AUTO_INCREMENT = 1
 - explorar mensagem de error
-- pacotes do ifpb perdidos de 09:00 18:00 do dia X
 - select * from history where id = (select id from history order by id desc limit 1);
 -->
