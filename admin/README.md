@@ -1,5 +1,10 @@
 # Admin
 
+<!-- 
+TODO Architecture MySQL
+![]() 
+-->
+
 ## Commands
 ---
 
@@ -70,6 +75,11 @@ $ mysqldump -u root -p --all-databases > database_backup.sql # database
 ```
 $ mysql -u root -p database < database_backup_backup.sql
 ```
+
+## [VSCode MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql)
+---
+
+![](https://github.com/formulahendry/vscode-mysql/raw/master/images/connection.png)
 
 ## [MySQL Workbench](https://www.mysql.com/products/workbench/)
 ---
