@@ -51,6 +51,8 @@ mysql>
 
 ### Backup
 
+#### Export
+
 **mysqldump -u [username] -p [database] > [database]_backup.sql**
 ```
 $ mysqldump -u root -p monitor_db > monitor_db_backup.sql
@@ -62,9 +64,20 @@ $ mysqldump -u root -p --no-data monitor_db > monitor_db_backup.sql # structure 
 $ mysqldump -u root -p --all-databases > database_backup.sql # database
 ```
 
+#### Import
+
+**mysql -u [username] -p [database] < database_backup_backup.sql**
 ```
-$ mysql -u [username] -p [database] < database_backup_backup.sql
+$ mysql -u root -p database < database_backup_backup.sql
 ```
 
 ## [MySQL Workbench](https://www.mysql.com/products/workbench/)
 ---
+
+### Design
+
+### Admin
+
+### Export
+
+### Import
