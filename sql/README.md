@@ -72,6 +72,8 @@ Query OK, 0 rows affected (0.00 sec)
 3 rows in set (0.00 sec)
 ```
 
+### Table
+
 ```sql
 > USE monitor_db;
 Database changed
@@ -84,8 +86,6 @@ Database changed
 +------------+
 1 row in set (0.00 sec)
 ```
-
-### Table
 
 ```sql
 > SHOW TABLES;
@@ -305,16 +305,6 @@ Records: 2  Duplicates: 0  Warnings: 0
 1 row in set (0.00 sec)
 ```
 
-```sql
-> SELECT * FROM host 
-    WHERE id = 2;
-+----+-----------------+--------------+
-| id | name            | address      |
-+----+-----------------+--------------+
-|  2 | www.ifrn.edu.br | 200.10.10.11 |
-+----+-----------------+--------------+
-```
-
 ### CRUD - Update
 
 ```sql
@@ -473,7 +463,7 @@ Records: 5  Duplicates: 0  Warnings: 0
 > SELECT 
     sum(history.transmitted) AS transmitted, 
     sum(history.received) AS received, 
-    round(received/transmitted, 2) AS percent 
+    round(history.received/history.transmitted, 2) AS percent 
   FROM 
     host INNER JOIN history
   WHERE 
@@ -482,7 +472,7 @@ Records: 5  Duplicates: 0  Warnings: 0
 +-------------+----------+---------+
 | transmitted | received | percent |
 +-------------+----------+---------+
-|          12 |        9 |    0.57 |
+|          12 |        9 |    0.75 |
 +-------------+----------+---------+
 1 row in set (0.00 sec)
 ```
