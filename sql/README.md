@@ -485,6 +485,7 @@ Bye
 ## References
 ---
 
+- [enochtangg/quick-SQL-cheatsheet](https://github.com/enochtangg/quick-SQL-cheatsheet)
 - [MySQL - SQL Statement Syntax](https://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html)
 - Mysql: [Data types](https://www.tutorialspoint.com/mysql/mysql-data-types.htm), [Functions](https://www.w3schools.com/sql/sql_ref_mysql.asp), [Operators](https://www.w3schools.com/sql/sql_operators.asp)
 - [Oracle - Database SQL Language Reference](https://docs.oracle.com/database/121/SQLRF/toc.htm)
