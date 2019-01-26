@@ -1,4 +1,11 @@
-# SQL
+# SQL GUIDE
+
+* [Dados](#dados)
+* [Comandos](#comandos)
+    * [Database](#database)
+    * [Table](#table)
+    * CRUD ([Create](#crud---create), [Read](#crud---read), [Update](#crud---update), [Delete](#crud---delete))
+* Database Relation [(1-N)](#database-relation-1-n)
 
 ## Dados
 ---
@@ -18,7 +25,7 @@
 3. Qual é a porcentagem de pacotes recebidos do IFPB?
 4. Qual é a porcentagem de pacotes perditos do IFPB no dia 16/02/2018 entre 09:00 até 18:00?
 
-## SQL
+## Comandos
 ---
 
 > **DICAS:**
