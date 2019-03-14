@@ -23,7 +23,7 @@
 1. Quantos pacotes foram recebidos?
 2. Qual é a média de pacotes perdidos?
 3. Qual é a porcentagem de pacotes recebidos do IFPB?
-4. Qual é a porcentagem de pacotes perditos do IFPB no dia 16/02/2018 entre 09:00 até 18:00?
+4. Qual é a porcentagem de pacotes perdidos do IFPB no dia 16/02/2018 entre 09:00 até 18:00?
 
 ## Comandos
 ---
